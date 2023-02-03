@@ -10,8 +10,8 @@ export async function getCompany(id) {
         name
         description
         jobs {
-            id
-            title
+          id
+          title
         }
       }
     }

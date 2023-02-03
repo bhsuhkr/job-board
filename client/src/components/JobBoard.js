@@ -7,13 +7,15 @@ function JobBoard() {
   const [error, setError] = useState(false);
   useEffect(() => {
     console.log("mounted"); // runs second, run only onces
-    getJobs().then(setJobs).catch((err) => setError(true));
+    getJobs()
+      .then(setJobs)
+      .catch((err) => setError(true));
   }, []);
 
   console.log("[job]", jobs); //runs first, runs third: render again after getJobs() runs
 
   if (error) {
-    return <p>Sorry, something went wrong.</p>
+    return <p>Sorry, something went wrong.</p>;
   }
 
   return (
